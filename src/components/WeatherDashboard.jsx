@@ -22,15 +22,28 @@ export default function WeatherDashboard() {
   useEffect(() => {
     if (navigator.geolocation && !currentCity) {
       navigator.geolocation.getCurrentPosition(
-        (position) => {
-          fetchWeatherData('London');
+        async (position) => {
+          const { latitude, longitude } = position.coords;
+          
+          try {
+            const response = await fetch(`/api/weather?lat=${latitude}&lon=${longitude}&type=current`);
+            const data = await response.json();
+            
+            if (response.ok && data.name) {
+              fetchWeatherData(data.name);
+            } else {
+              fetchWeatherData('Delhi');
+            }
+          } catch (error) {
+            fetchWeatherData('Delhi');
+          }
         },
         () => {
-          fetchWeatherData('London');
+          fetchWeatherData('Delhi');
         }
       );
     } else if (!currentCity) {
-      fetchWeatherData('London');
+      fetchWeatherData('Delhi');
     }
   }, []);
   
