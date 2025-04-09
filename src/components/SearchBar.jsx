@@ -45,7 +45,7 @@ export default function SearchBar() {
           {searchHistory.length > 0 && (
             <button 
               type="button"
-              className="absolute right-10 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
               onClick={() => setShowHistory(!showHistory)}
             >
               <FiClock size={18} />

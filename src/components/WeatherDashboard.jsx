@@ -50,7 +50,7 @@ export default function WeatherDashboard() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl md:text-3xl font-bold">Weather App</h1>
+        <h1 className="text-2xl md:text-3xl font-bold">Weather Application</h1>
         <ThemeToggle />
       </div>
       
