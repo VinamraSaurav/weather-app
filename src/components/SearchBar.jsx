@@ -45,7 +45,7 @@ export default function SearchBar() {
           {searchHistory.length > 0 && (
             <button 
               type="button"
-              className="absolute right-10 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className="absolute right-10 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
               onClick={() => setShowHistory(!showHistory)}
             >
               <FiClock size={18} />
@@ -90,7 +90,7 @@ export default function SearchBar() {
             {searchHistory.map((city, index) => (
               <li key={index}>
                 <button
-                  className="w-full text-left py-2 px-4 hover:bg-opacity-20 hover:bg-gray-300 transition-colors"
+                  className="w-full text-left py-2 px-4 hover:bg-opacity-20 hover:bg-[#0ea5e9] rounded-lg transition-all"
                   onClick={() => handleHistoryClick(city)}
                 >
                   {city}
